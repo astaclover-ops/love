@@ -16,30 +16,24 @@ height:100vh;
 text-align:center;
 color:white;
 }
-.box{
-background:rgba(255,255,255,0.15);
-padding:25px;
-border-radius:20px;
-backdrop-filter:blur(10px);
-width:90%;
-max-width:350px;
+<style>
+body{
+  ...
 }
-img{
-width:200px;
-height:200px;
-border-radius:20px;
-object-fit:cover;
-margin-bottom:15px;
+
+.heart{
+  position:fixed;
+  top:-10px;
+  color:red;
+  font-size:20px;
+  animation:fall linear forwards;
 }
-button{
-padding:10px 20px;
-border:none;
-border-radius:10px;
-background:white;
-color:#ff4d88;
-font-weight:bold;
-cursor:pointer;
-}
+
+@keyframes fall{
+  to{
+    transform:translateY(100vh);
+    opacity:0;
+  }
 </style>
 </head>
 <body>
