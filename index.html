@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Untuk Kamu ❤️</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{overflow:hidden;height:100vh;display:flex;justify-content:center;align-items:center;
+background:linear-gradient(-45deg,#ff6ea7,#ff8fb8,#ffd1e6,#ffc0cb);background-size:400% 400%;
+animation:bg 12s ease infinite}
+@keyframes bg{0%{background-position:0 50%}50%{background-position:100% 50%}100%{background-position:0 50%}}
+#bg{position:fixed;inset:0;overflow:hidden}
+.heart{position:fixed;top:-30px;pointer-events:none;animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(720deg);opacity:0}}
+.card{position:relative;z-index:2;width:92%;max-width:370px;padding:22px;border-radius:24px;
+background:rgba(255,255,255,.18);backdrop-filter:blur(12px);text-align:center;color:#fff;
+box-shadow:0 10px 30px rgba(0,0,0,.25)}
+#slide{width:220px;height:220px;border-radius:20px;object-fit:cover;border:4px solid #fff;
+box-shadow:0 0 25px rgba(255,255,255,.6);animation:zoom 6s infinite alternate}
+@keyframes zoom{from{transform:scale(1)}to{transform:scale(1.08)}}
+h1{margin:14px 0}
+p{line-height:1.6}
+button{margin-top:18px;padding:12px 22px;border:none;border-radius:999px;background:#fff;
+color:#ff4d88;font-weight:bold;cursor:pointer}
+</style>
+</head>
+<body>
+<div id="bg"></div>
+<audio id="music" autoplay loop>
+<source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<div class="card">
+<img id="slide" src="foto1.png">
+<h1>❤️ Untuk Kamu ❤️</h1>
+<p id="msg">Terima kasih sudah hadir di hidup aku. Semoga kita selalu bersama, saling menjaga, dan saling menyayangi sampai kapan pun. 🥹💖</p>
+<button onclick="love()">Peluk Aku 🤍</button>
+</div>
+
+<script>
+document.body.addEventListener("click",()=>music.play(),{once:true});
+
+const photos=["foto1.png","foto2.png","foto3.png"];
+let i=0;
+setInterval(()=>{i=(i+1)%photos.length;slide.src=photos[i]},3000);
+
+function rain(){
+ const e=["❤️","💖","💕","💗","💘","💞"];
+ for(let n=0;n<3;n++){
+  let d=document.createElement("div");
+  d.className="heart";
+  d.innerHTML=e[Math.floor(Math.random()*e.length)];
+  d.style.left=Math.random()*100+"vw";
+  d.style.fontSize=(18+Math.random()*22)+"px";
+  d.style.animationDuration=(3+Math.random()*4)+"s";
+  document.body.appendChild(d);
+  setTimeout(()=>d.remove(),7000);
+ }
+}
+setInterval(rain,120);
+
+function love(){
+ msg.innerHTML="Aku akan selalu memilih kamu, hari ini, besok, dan seterusnya. I Love You Forever ❤️";
+ for(let x=0;x<60;x++) setTimeout(rain,x*30);
+}
+</script>
+</body>
+</html>
