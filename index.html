@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Untuk Kamu ❤️</title>
+<style>
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:linear-gradient(135deg,#ff9ecf,#ffd6e8);
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+text-align:center;
+color:white;
+}
+.box{
+background:rgba(255,255,255,0.15);
+padding:25px;
+border-radius:20px;
+backdrop-filter:blur(10px);
+width:90%;
+max-width:350px;
+}
+img{
+width:200px;
+height:200px;
+border-radius:20px;
+object-fit:cover;
+margin-bottom:15px;
+}
+button{
+padding:10px 20px;
+border:none;
+border-radius:10px;
+background:white;
+color:#ff4d88;
+font-weight:bold;
+cursor:pointer;
+}
+</style>
+</head>
+<body>
+
+<div class="box">
+<img src="foto.jpg" alt="Foto Kita">
+<h2>Hai Sayang ❤️</h2>
+<p>Kalau kamu buka website ini, berarti aku cuma mau bilang...</p>
+
+<h3 id="teks">Aku Sayang Banget Sama Kamu 🥺💖</h3>
+
+<button onclick="ubah()">Klik Aku</button>
+</div>
+
+<script>
+function ubah(){
+document.getElementById("teks").innerHTML="Makasih ya udah hadir di hidup aku. I Love You Selamanya ❤️";
+}
+</script>
+
+</body>
+</html>
